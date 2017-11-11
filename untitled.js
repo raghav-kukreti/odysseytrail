@@ -1,5 +1,5 @@
 function drawStar(t, e) {
-    ctx.beginPath(), ctx.moveTo(t, e), ctx.lineTo(t + 2, e + 2), ctx.strokeStyle = "#E1F5FE", ctx.stroke()
+    ctx.beginPath(), ctx.moveTo(t, e), ctx.lineTo(t + 2, e + 2), ctx.strokeStyle = "#ffffff", ctx.stroke()
 }
 
 function moveStars() {

@@ -2,13 +2,19 @@
 * {
     position: relative
 }
+*,
+*::after,
+*::before {
+    transition: all .35s ease-in-out;
+    /*box-sizing: border-box;*/
+}
 #main,
 .next {
     overflow-x: hidden
 }
 .count li,
 .left>p {
-    text-transform: uppercase
+    /*text-transform: uppercase*/
 }
 .count,
 .img {
@@ -22,50 +28,39 @@ h2 {
 }
 body {
     margin: 0;
+    padding: 0;
     height: 100%;
     font-family: Raleway;
     font-size: 1.1rem;
-    line-height: 1.4
+    line-height: 1.4;
 }
 .count li,
 .count p {
-    font-family: Montserrat;
+    font-family: Inconsolata;
     text-align: center;
-    font-weight: 700
+    font-weight: 700;
 }
 #main {
     height: 100vh;
-    min-height: 40rem;
-    opacity: .5;
-    -webkit-animation: fadeout 3s;
-    -moz-animation: fadeout 3s;
-    -ms-animation: fadeout 3s;
-    -o-animation: fadeout 3s;
-    animation: fadeout 3s
+    /*min-height: 40rem;*/
+    /*opacity: .5;*/
 }
 .background,
 canvas#stars {
     height: 100%;
-    left: 0;
+    /*left: 0;*/
     width: 100%;
     top: 0
 }
-#main:hover {
-    opacity: 1;
-    -webkit-animation: fadein 3s;
-    -moz-animation: fadein 3s;
-    -ms-animation: fadein 3s;
-    -o-animation: fadein 3s;
-    animation: fadein 3s
-}
+
 canvas#stars {
-    position: fixed
+    position: absolute;
 }
 canvas#stars.abs {
     position: absolute
 }
 .background {
-    background: linear-gradient(#494d50, #0f0d1f);
+    background: #111;
     position: fixed
 }
 .left,
@@ -89,19 +84,22 @@ canvas#stars.abs {
     position: absolute;
     content: "";
     z-index: -1;
-    width: 80%;
+    width: 70%;
     height: 100%;
     top: 0;
     left: -20%;
-    transform: skewX(-40deg);
-    background: linear-gradient(#0a2639, #3D3766);
+    transform: skewX(-10deg);
+    background: #F2994A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     opacity: 1
 }
 .count {
     height: 22%;
     width: 45%;
     position: relative;
-    top: 75%;
+    top: 70%;
     right: 3%
 }
 .count span:nth-child(1),
@@ -142,14 +140,14 @@ canvas#stars.abs {
 .count p {
     font-size: 2.5vw
 }
-.left>p {
+/*.left>p {
     font-family: 'Roboto Mono', monospace;
     letter-spacing: .5em;
     font-size: 2vw;
     margin-left: 5%;
     top: 20%;
     text-align: center
-}
+}*/
 .left>span {
     font-size: 4vw;
     font-weight: 700;
@@ -435,4 +433,100 @@ button:hover {
     to {
         opacity: .25
     }
+}
+
+/*
+    KUKRETI
+    bc kuch mat hatana 
+
+*/
+
+@font-face {
+    src: url(head.ttf);
+    font-family: Header;
+}
+.left h1 {
+    position: absolute;
+    padding: 13rem 5rem;
+    font-family: Header;
+    letter-spacing: -2px;
+    font-size: 4rem;
+}
+.lead {
+    font-family: Inconsolata;
+    font-weight: normal;
+    position: absolute;
+    font-size: 1.2rem;
+    width: 30%;
+    line-height: 1.33   ;
+    opacity: .8;
+    padding-top: 22rem;
+    /*padding-right:rem;   */
+    padding-left: 5.2rem;   
+}
+
+.fa {
+    padding-left: .5rem !important;
+}
+
+.left .spons {
+    font-family: Inconsolata;
+    font-weight: normal;
+    position: absolute;
+    font-size: 1.2rem;
+    /*width: 30%;*/
+    /*line-height: 1.33   ;*/
+    opacity: .8;
+    top: 34.5rem;
+    padding-bottom: 0px;
+    /*padding-right:rem;   */
+    left: 5.2rem;  
+    color: rgba(255,255,255,.7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.55);
+}
+
+.cont {
+    top: 37rem !important;      
+}
+.spons:hover {
+    padding-bottom: 2px;
+    color: #fff;
+}
+
+.sponsors {
+    position: relative;
+    height: 50vh;
+    background: #efefef;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.separ {
+    height: 30vh;
+    background: url(sep.jpg) top center no-repeat fixed;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    /*background: #222;*/
+}
+
+.separ .centered {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background: rgba(0,0,0,0.666)
+}
+.separ .centered h1 {
+    color: #fff;
+    font-family: Raleway;
+    font-weight: 200;
+    font-size: 1rem;
+    letter-spacing: 50px;
+}
+
+.sponsor_sec {
+    height: 100px;
+    background:#fff; 
 }
